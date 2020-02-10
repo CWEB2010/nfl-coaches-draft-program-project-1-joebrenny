@@ -10,15 +10,67 @@ namespace project1
         static void Main(string[] args)
 
         {
+            string[,] playersName = 
+                {
+                { "Joe Burrow ", "Tua Tagoviloa","Justin Herbert","Jordan Love","Jake Fromm"},
+                { "D'Andre Swift", "Jonathan Taylor","J.K Dobbins","Zack Moss","Cam Akers"},
+                { "CeeDee Lamb ", "Jerry Jeudy","Tee Higgins","Henry Ruggs III","Yeter Gross-Matos"},
+                { "Chase Young ", "Derrick Brown","A.J Epenesa","Javon Kinlaw","Yeter Gross-Matos"},
+                { "Jeff Okudah", "Grant Delpit","Kristian Fulton","Xavier McKinny","CJ Jenderson"},
+                { "Cole Kmet", "Brycen Hopkins","Hunter Bryant","Jared Pinkney","Jacob Breeland"},
+                { "Isaiah Simmons", "Kenneth Murray","Zach Baun","Akeem Davis-Gaither","Troy Dye"},
+                { "Jedrick Wills Jr.", "Andrew Thomas","Tristan Wirfs","Tyler Biadasz","Mekhi Becton"}
+                };
+
+            string[,] playersCollege =
+                {
+                { "(LSU) ", "(Alabama)","(Oregon)","(Utah St.)","(Georgia)"},
+                { "(Gerogia)", "(Wisconsin)","(Ohio St.)","(Utah)","(Florida St.)"},
+                { "(Oklahoma)", "(Alabama)","(Clemson)","(Alabama)","(Minnesota)"},
+                { "(Ohio St.)", "(Auburn)","(Iowa)","(So. Carolina)","(Penn St.)"},
+                { "(Ohio St.)", "(LSU)","(LSU)","(Alabama)","(Florida)"},
+                { "(Norte Dame)", "(Purdue)","(Washington)","(Vanderbilt)","(Oregon)"},
+                { "(Clemson)", "(Oklahoma)","(Wisconsin)","(App. St.)","(Oregon)"},
+                { "(Alabama)", "(Geogia)","(Iowa)","(Wisconsin)","(Louisville)"}
+                };
+
+            double [,] playersCost =
+                {
+                {26400100,20300100,17420300,13100145,10300000},
+                {24500100,19890200,18700800,15000000,11600400},
+                {23400000,21900300,19300230,13400230,10000000},
+                {26200300,22000000,16000000,18000000,13000000},
+                { 24000000,22500249,20000100,16000200,11899999},
+                { 27800900,21000800,17499233,27900200,14900333},
+                { 22900300,19000590,18000222,12999999,10000100},
+                { 23000000, 20000000,19400000,16200700,15900000}
+                };
+            //int y = 0;
             Console.WriteLine("checking commit to repo");
             //creating the object for Joe Burrow 
-            Player QBone = new Player();
-            QBone.setName("Joe Burrow");
-            QBone.setCollege("LSU");
-            QBone.setSalary(26000000);
-            QBone.setPosition("Quarter Back");
+            for (var x = 0; x < playersName.GetLength(0); x++)
+                
+            {
+             for (var y = 0;y< playersName.GetLength(1); y++ )
+                {
+                Console.WriteLine(playersName[x,y]);
+                Console.WriteLine(playersCollege[x, y]);
+                Console.WriteLine(playersCost[x, y].ToString("c"));
+                Console.WriteLine();
+                   
+                //Player playerx;
+                //playerx = new Player(Player.playersName[x,0],playersCollege[x],);
+                } 
 
-            Console.WriteLine($"Name:{ QBone.Name}");
+
+            }
+            //Player QBone = new Player();
+            //QBone.setName("Joe Burrow");
+            //QBone.setCollege("LSU");
+            //QBone.setSalary(26000000);
+            //QBone.setPosition("Quarter Back");
+
+            //Console.WriteLine($"Name:{ QBone.Name}");
 
             //christian.Greeting();
             //christian.bio();

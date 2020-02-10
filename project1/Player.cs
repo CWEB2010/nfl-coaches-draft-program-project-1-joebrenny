@@ -11,7 +11,7 @@ namespace project1
         public string College;
         public double Salary;
         public string Position;
-        public int rank;
+        public int Rank;
 
  
 
@@ -51,5 +51,17 @@ namespace project1
         {
             return Position;
         }
+        //defualt contructor
+        Player()
+        {
+
+        }
+        Player(string name, string college, double salary)
+        {
+            Name = name;
+            College = college;
+            Salary = salary;
+        }
+
     }// end player class
 }
