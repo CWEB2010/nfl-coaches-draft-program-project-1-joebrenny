@@ -57,9 +57,11 @@ namespace project1
                 Console.WriteLine(playersCollege[x, y]);
                 Console.WriteLine(playersCost[x, y].ToString("c"));
                 Console.WriteLine();
-                   
-                //Player playerx;
-                //playerx = new Player(Player.playersName[x,0],playersCollege[x],);
+                   // object player
+                Player playerx;
+                    x++;
+                playerx = new Player(playersName[x,y],playersCollege[x,y],playersCost[x,y]);
+                    Console.WriteLine(playerx);
                 } 
 
 

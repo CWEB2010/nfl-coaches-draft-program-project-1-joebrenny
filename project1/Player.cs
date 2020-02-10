@@ -56,7 +56,7 @@ namespace project1
         {
 
         }
-        Player(string name, string college, double salary)
+        public Player(string name, string college, double salary)
         {
             Name = name;
             College = college;
