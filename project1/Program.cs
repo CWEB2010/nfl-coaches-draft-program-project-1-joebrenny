@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace project1
 {
@@ -10,7 +11,10 @@ namespace project1
 
         static void Main(string[] args)
 
-        {
+        {   //deculartions 
+            string primer,sential="EXIT";
+            double Budget = 95000000;
+
             string[,] playersName = 
                 {
                 { "Joe Burrow ", "Tua Tagoviloa","Justin Herbert","Jordan Love","Jake Fromm"},
@@ -67,43 +71,60 @@ namespace project1
                 {"Tight End","Tight End","Tight End","Tight End","Tight End" },
                 {"Line-Backer","Line-Backer","Line-Backer","Line-Backer","Line-Backer" },
                 {"Offensive Tackle","Offensive Tackle","Offensive Tackle","Offensive Tackle","Offensive Tackle" },
-            }; 
-
-                 Player[] player = new Player[40];
-            //int y = 0;
-            Console.WriteLine("checking commit to repo");
-            //creating the object for Joe Burrow 
-            for (var x = 0; x < playersName.GetLength(0); x++)
-                
+            };
+            Console.WriteLine("Welcome to the NFL Draft Program");
+            Console.WriteLine("Please type Enter to get started");
+            Console.WriteLine($"Please select up to 5 players and you have a budget of {Budget.ToString("c")} ");
+            primer=Console.ReadLine();
+            while (primer != sential)
             {
-             for (var y = 0;y< playersName.GetLength(1); y++ )
+               
+                Player[] player = new Player[40];
+                List<Player> PlayerList = new List<Player>();
+                List<Player> selectionList = new List<Player>();
+                //int y = 0;
+
+                //creating the object for Joe Burrow 
+                for (var x = 0; x < playersName.GetLength(0); x++)
+
                 {
-                //Console.WriteLine(playersName[x,y]);
-                //Console.WriteLine(playersCollege[x, y]);
-                //Console.WriteLine(playersCost[x, y].ToString("c"));
-                //Console.WriteLine(rank[x,y]);
-                //Console.WriteLine(Position[x,y]);
-                //Console.WriteLine(player[x]);
+                    for (var y = 0; y < playersName.GetLength(1); y++)
+                    {
+                        //Console.WriteLine(playersName[x,y]);
+                        //Console.WriteLine(playersCollege[x, y]);
+                        //Console.WriteLine(playersCost[x, y].ToString("c"));
+                        //Console.WriteLine(rank[x,y]);
+                        //Console.WriteLine(Position[x,y]);
+                        //Console.WriteLine(player[x]);
 
-                    
-                //Player player;
-                    //x++;
-                player [x]= new Player(playersName[x,y],playersCollege[x,y],playersCost[x,y],rank[x,y],Position[x,y]);
-                    Console.WriteLine(player[x]);
-                    
-                } //inner for loop y
-            }// end of the for loop X
-            //Console.WriteLine(player[3]);
-            //Player QBone = new Player();
-            //QBone.setName("Joe Burrow");
-            //QBone.setCollege("LSU");
-            //QBone.setSalary(26000000);
-            //QBone.setPosition("Quarter Back");
 
-            //Console.WriteLine($"Name:{ QBone.Name}");
+                        //Player player;
+                        //x++;
+                        player[x]  = new Player(playersName[x, y], playersCollege[x, y], playersCost[x, y], rank[x, y], Position[x, y]);
+                        //Console.WriteLine(player[x]);
+                        PlayerList.Add(player[x]);
+                        //Console.WriteLine("output player list");
+                        //Console.WriteLine(PlayerList);
 
-            //christian.Greeting();
-            //christian.bio();
-        }
+                    } //inner for loop y
+                }// end of the for loop X
+                Console.WriteLine("checking to see if the list is outputing");
+                PlayerList.ForEach(x => Console.WriteLine(x.ToString()));
+                
+                 //Console.WriteLine(player[3]);
+                 //Player QBone = new Player();
+                 //QBone.setName("Joe Burrow");
+                 //QBone.setCollege("LSU");
+                 //QBone.setSalary(26000000);
+                 //QBone.setPosition("Quarter Back");
+
+                //Console.WriteLine($"Name:{ QBone.Name}");
+
+                //christian.Greeting();
+                //christian.bio();
+                Console.WriteLine("please press enter to run program again or type'EXIT' to end program ");
+                primer= Console.ReadLine().ToUpper();
+            }//end of while loop primer
+        }//end  of the main 
     }// end of the class program 
 }
