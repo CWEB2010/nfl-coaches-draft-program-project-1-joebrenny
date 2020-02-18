@@ -13,8 +13,6 @@ namespace project1
         public string Position;
         public int Rank;
 
- 
-
             //getter and setter methods
        public void setName(string name)
         {
@@ -56,11 +54,19 @@ namespace project1
         {
 
         }
-        public Player(string name, string college, double salary)
+        public Player(string name, string college, double salary, int rank, string position)
         {
             Name = name;
             College = college;
             Salary = salary;
+            Rank = rank;
+            Position = position;
+        }
+        public override string ToString()
+        {
+            return String.Format($"RANK:{Rank}\n NAME:{Name}\n College:{College}\n Salary:{Salary.ToString("c")}\n" +
+                $"Position: {Position} \n");
+            
         }
 
     }// end player class

@@ -3,10 +3,11 @@
 namespace project1
 {
     class Program
-
+        {
         //need to create a class so i can make the objects of players
         //use a bool value once the a player is selected so they user can use it twice
-    {
+        
+
         static void Main(string[] args)
 
         {
@@ -45,6 +46,30 @@ namespace project1
                 { 22900300,19000590,18000222,12999999,10000100},
                 { 23000000, 20000000,19400000,16200700,15900000}
                 };
+            int[,] rank=
+                {
+                {1,2,3,4,5 },
+                {1,2,3,4,5 },
+                {1,2,3,4,5 },
+                {1,2,3,4,5 },
+                {1,2,3,4,5 },
+                {1,2,3,4,5 },
+                {1,2,3,4,5 },
+                {1,2,3,4,5 },
+                 };
+            string [,] Position=
+            {
+                {"Quarterback","Quarterback","Quarterback","Quarterback","Quarterback" },
+                {"Running Back","Running Back","Running Back","Running Back","Running Back" },
+                {"Wide-Receiver","Wide-Receiver","Wide-Receiver","Wide-Receiver","Wide-Receiver" },
+                {"Defensive Lineman","Defensive Lineman","Defensive Lineman","Defensive Lineman","Defensive Lineman" },
+                {"Defensive-Back","Defensive-Back","Defensive-Back","Defensive-Back","Defensive-Back" },
+                {"Tight End","Tight End","Tight End","Tight End","Tight End" },
+                {"Line-Backer","Line-Backer","Line-Backer","Line-Backer","Line-Backer" },
+                {"Offensive Tackle","Offensive Tackle","Offensive Tackle","Offensive Tackle","Offensive Tackle" },
+            }; 
+
+                 Player[] player = new Player[40];
             //int y = 0;
             Console.WriteLine("checking commit to repo");
             //creating the object for Joe Burrow 
@@ -53,19 +78,22 @@ namespace project1
             {
              for (var y = 0;y< playersName.GetLength(1); y++ )
                 {
-                Console.WriteLine(playersName[x,y]);
-                Console.WriteLine(playersCollege[x, y]);
-                Console.WriteLine(playersCost[x, y].ToString("c"));
-                Console.WriteLine();
-                   // object player
-                Player playerx;
-                    x++;
-                playerx = new Player(playersName[x,y],playersCollege[x,y],playersCost[x,y]);
-                    Console.WriteLine(playerx);
-                } 
+                //Console.WriteLine(playersName[x,y]);
+                //Console.WriteLine(playersCollege[x, y]);
+                //Console.WriteLine(playersCost[x, y].ToString("c"));
+                //Console.WriteLine(rank[x,y]);
+                //Console.WriteLine(Position[x,y]);
+                //Console.WriteLine(player[x]);
 
-
-            }
+                    
+                //Player player;
+                    //x++;
+                player [x]= new Player(playersName[x,y],playersCollege[x,y],playersCost[x,y],rank[x,y],Position[x,y]);
+                    Console.WriteLine(player[x]);
+                    
+                } //inner for loop y
+            }// end of the for loop X
+            //Console.WriteLine(player[3]);
             //Player QBone = new Player();
             //QBone.setName("Joe Burrow");
             //QBone.setCollege("LSU");
