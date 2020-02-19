@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace project1
 {
@@ -14,6 +15,9 @@ namespace project1
         {   //deculartions 
             string primer,sential="EXIT";
             double Budget = 95000000;
+            double costSelected;
+            double moneyLeft;
+            string playerNameSelection;
 
             string[,] playersName = 
                 {
@@ -81,7 +85,7 @@ namespace project1
                
                 Player[] player = new Player[40];
                 List<Player> PlayerList = new List<Player>();
-                List<Player> selectionList = new List<Player>();
+                List<Player> selectionList = new List<Player>(5);
                 //int y = 0;
 
                 //creating the object for Joe Burrow 
@@ -108,15 +112,47 @@ namespace project1
 
                     } //inner for loop y
                 }// end of the for loop X
+                //out put the list 
                 Console.WriteLine("checking to see if the list is outputing");
                 PlayerList.ForEach(x => Console.WriteLine(x.ToString()));
+                    
+
+
+
+                for (var s= selectionList.Count; s >= 0; s++)
+                {
+                   Console.WriteLine($"please enter the player name for pick {s}");
+                    playerNameSelection = Console.ReadLine();
+                    for (var i = PlayerList.Count - 1; i >= 0; i--)
+                    { 
+                        if (PlayerList[i].Name.Contains(playerNameSelection))
+                        {
+                            selectionList.Add(PlayerList[i]);
+                            PlayerList.RemoveAt(i);
+
+                        }
+                    }
+
+                    PlayerList.ForEach(x => Console.WriteLine(x.ToString()));
+
+                    Console.WriteLine("SELECTED PLAYERS_BELOW_______REMAINING_CHOICES_ABOVE____________________________");
+                    selectionList.ForEach(x => Console.WriteLine(x.ToString()));
+                     
+                    costSelected =selectionList.Sum(item => item.Salary);
+                    moneyLeft = costSelected - Budget;
+                    Console.WriteLine($"You have spent {costSelected.ToString("c")}");
+                    Console.WriteLine($"You have {moneyLeft.ToString("c")} remaining");
+
+
+                }
+
                 
-                 //Console.WriteLine(player[3]);
-                 //Player QBone = new Player();
-                 //QBone.setName("Joe Burrow");
-                 //QBone.setCollege("LSU");
-                 //QBone.setSalary(26000000);
-                 //QBone.setPosition("Quarter Back");
+                //Console.WriteLine(player[3]);
+                //Player QBone = new Player();
+                //QBone.setName("Joe Burrow");
+                //QBone.setCollege("LSU");
+                //QBone.setSalary(26000000);
+                //QBone.setPosition("Quarter Back");
 
                 //Console.WriteLine($"Name:{ QBone.Name}");
 
