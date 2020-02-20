@@ -18,6 +18,7 @@ namespace project1
             double costSelected;
             double moneyLeft;
             string playerNameSelection;
+            double deal = 65000000;
 
             string[,] playersName = 
                 {
@@ -101,7 +102,6 @@ namespace project1
                         //Console.WriteLine(Position[x,y]);
                         //Console.WriteLine(player[x]);
 
-
                         //Player player;
                         //x++;
                         player[x]  = new Player(playersName[x, y], playersCollege[x, y], playersCost[x, y], rank[x, y], Position[x, y]);
@@ -119,32 +119,55 @@ namespace project1
 
 
 
-                for (var s= selectionList.Count; s >= 0; s++)
+                for (var s=0 /*selectionList.Count*/; s <=4 ; s++)
                 {
-                   Console.WriteLine($"please enter the player name for pick {s}");
+                    Console.WriteLine($"you have picked {s} Players");
+                   Console.WriteLine($"please enter the player name for pick {s+1}");
+                    Console.WriteLine("Please enter if you are done selecting players");
                     playerNameSelection = Console.ReadLine();
+                  if (playerNameSelection == "")
+                    {
+                        break;
+                    }
                     for (var i = PlayerList.Count - 1; i >= 0; i--)
+                        //(var i =0; PlayerList.Count > i;  i++)
                     { 
                         if (PlayerList[i].Name.Contains(playerNameSelection))
                         {
                             selectionList.Add(PlayerList[i]);
                             PlayerList.RemoveAt(i);
-
                         }
+                        
+                        //if(!(PlayerList[i].Name.Contains(playerNameSelection)))
+                        //{
+                        //    Console.WriteLine("Please check Spelling and enter correct player name!!!");
+                            
+                        //}
                     }
 
                     PlayerList.ForEach(x => Console.WriteLine(x.ToString()));
 
                     Console.WriteLine("SELECTED PLAYERS_BELOW_______REMAINING_CHOICES_ABOVE____________________________");
                     selectionList.ForEach(x => Console.WriteLine(x.ToString()));
-                     
+                     //get the total of players selected and the remaining budget left 
                     costSelected =selectionList.Sum(item => item.Salary);
                     moneyLeft = costSelected - Budget;
+                    if (costSelected > Budget)
+                    {
+                        Console.WriteLine("You have exceeded the budget and must start over");
+                        break;
+                    }
                     Console.WriteLine($"You have spent {costSelected.ToString("c")}");
                     Console.WriteLine($"You have {moneyLeft.ToString("c")} remaining");
 
-
-                }
+                    //cost effective check if top three players and not working for this 
+                    if (selectionList.Exists(x => x.Rank == 1) || selectionList.Exists(x => x.Rank == 2) || selectionList.Exists(x => x.Rank == 3)
+                        && /*costSelected =*/ selectionList.Sum(item => item.Salary) < deal) 
+                    {
+                        Console.WriteLine("COngrats you are cost effective");
+                    }
+            }
+                
 
                 
                 //Console.WriteLine(player[3]);

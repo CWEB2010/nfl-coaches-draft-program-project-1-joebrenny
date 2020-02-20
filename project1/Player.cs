@@ -13,42 +13,42 @@ namespace project1
         public string Position;
         public int Rank;
 
-            //getter and setter methods
-       public void setName(string name)
-        {
-            //this is a key word that is used for 
-            this.Name = name;
-            //could also use name = aname
-        }
-        //this is the get method 
-        public string getName()
-        {
-            return Name;
-        }
-         public void setCollege(string college)
-        {
-            this.College = college;
-        }
-        public string getCollege()
-        {
-            return College;
-        }
-        public void setSalary(double salary)
-        {
-            this.Salary = salary;
-        }
-        public double getSalary()
-        {
-            return Salary;
-        }
-        public void setPosition(string position)
-        {
-            this.Position = position;
-        }
-        public string getPosition()
-        {
-            return Position;
-        }
+       //     //getter and setter methods           i believe that these are not needed
+       //public void setName(string name)
+       // {
+       //     //this is a key word that is used for 
+       //     this.Name = name;
+       //     //could also use name = aname
+       // }
+       // //this is the get method 
+       // public string getName()
+       // {
+       //     return Name;
+       // }
+       //  public void setCollege(string college)
+       // {
+       //     this.College = college;
+       // }
+       // public string getCollege()
+       // {
+       //     return College;
+       // }
+       // public void setSalary(double salary)
+       // {
+       //     this.Salary = salary;
+       // }
+       // public double getSalary()
+       // {
+       //     return Salary;
+       // }
+       // public void setPosition(string position)
+       // {
+       //     this.Position = position;
+       // }
+       // public string getPosition()
+       // {
+       //     return Position;
+       // }
         //defualt contructor
         Player()
         {
