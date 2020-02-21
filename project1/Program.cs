@@ -123,7 +123,7 @@ namespace project1
                 {
                     Console.WriteLine($"you have picked {s} Players");
                    Console.WriteLine($"please enter the player name for pick {s+1}");
-                    Console.WriteLine("Please enter if you are done selecting players");
+                    Console.WriteLine("Press 'enter' if you are done selecting players");
                     playerNameSelection = Console.ReadLine();
                   if (playerNameSelection == "")
                     {
@@ -161,15 +161,22 @@ namespace project1
                     Console.WriteLine($"You have {moneyLeft.ToString("c")} remaining");
 
                     //cost effective check if top three players and not working for this 
-                    if (selectionList.Exists(x => x.Rank == 1) || selectionList.Exists(x => x.Rank == 2) || selectionList.Exists(x => x.Rank == 3)
-                        && /*costSelected =*/ selectionList.Sum(item => item.Salary) < deal) 
-                    {
-                        Console.WriteLine("COngrats you are cost effective");
-                    }
+                    //if (selectionList.Exists(x => x.Rank == 1) || selectionList.Exists(x => x.Rank == 2) || selectionList.Exists(x => x.Rank == 3)
+                    //    && /*costSelected =*/ selectionList.Sum(item => item.Salary) < deal) 
+                    //{
+                    //    Console.WriteLine("1111111111COngrats you are cost effective");
+                    //}
             }
-                
+                costSelected = selectionList.Sum(item => item.Salary);
+                if ((selectionList.Exists(x => x.Rank == 1) || selectionList.Exists(x => x.Rank == 2) || selectionList.Exists(x => x.Rank == 3))
+                      && costSelected /*= selectionList.Sum(item => item.Salary)*/ < deal)
+                {
+                    Console.WriteLine("Congrats you are cost effective");
+                }
 
-                
+
+
+
                 //Console.WriteLine(player[3]);
                 //Player QBone = new Player();
                 //QBone.setName("Joe Burrow");
