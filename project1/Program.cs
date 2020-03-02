@@ -95,15 +95,7 @@ namespace project1
                 {
                     for (var y = 0; y < playersName.GetLength(1); y++)
                     {
-                        //Console.WriteLine(playersName[x,y]);
-                        //Console.WriteLine(playersCollege[x, y]);
-                        //Console.WriteLine(playersCost[x, y].ToString("c"));
-                        //Console.WriteLine(rank[x,y]);
-                        //Console.WriteLine(Position[x,y]);
-                        //Console.WriteLine(player[x]);
 
-                        //Player player;
-                        //x++;
                         player[x]  = new Player(playersName[x, y], playersCollege[x, y], playersCost[x, y], rank[x, y], Position[x, y]);
                         //Console.WriteLine(player[x]);
                         PlayerList.Add(player[x]);
@@ -137,12 +129,7 @@ namespace project1
                             selectionList.Add(PlayerList[i]);
                             PlayerList.RemoveAt(i);
                         }
-                        
-                        //if(!(PlayerList[i].Name.Contains(playerNameSelection)))
-                        //{
-                        //    Console.WriteLine("Please check Spelling and enter correct player name!!!");
-                            
-                        //}
+
                     }
 
                     PlayerList.ForEach(x => Console.WriteLine(x.ToString()));
@@ -171,23 +158,9 @@ namespace project1
                 if ((selectionList.Exists(x => x.Rank == 1) || selectionList.Exists(x => x.Rank == 2) || selectionList.Exists(x => x.Rank == 3))
                       && costSelected /*= selectionList.Sum(item => item.Salary)*/ < deal)
                 {
-                    Console.WriteLine("Congrats you are cost effective");
+                    Console.WriteLine("Congrats you are cost effective !!!!!!!!!");
                 }
 
-
-
-
-                //Console.WriteLine(player[3]);
-                //Player QBone = new Player();
-                //QBone.setName("Joe Burrow");
-                //QBone.setCollege("LSU");
-                //QBone.setSalary(26000000);
-                //QBone.setPosition("Quarter Back");
-
-                //Console.WriteLine($"Name:{ QBone.Name}");
-
-                //christian.Greeting();
-                //christian.bio();
                 Console.WriteLine("please press enter to run program again or type'EXIT' to end program ");
                 primer= Console.ReadLine().ToUpper();
             }//end of while loop primer
